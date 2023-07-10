@@ -18,6 +18,32 @@ function generatePassword() {
     generatePassword();
   
   }
+
+if ((passwordLength < 8) || (passwordLength > 128)) {
+
+  alert(`Please enter valid number(between 8 and 128)`);
+  generatePassword();
+  } else {
+    alert(`The password will be ${passwordLength} characters.`);
+  }
+
+   // Lowercase message
+   var passLower = confirm(`Should your password include lower case letters?`);
+   var masterChar = [];
+   if (passLower) {
+     masterChar = masterChar.concat(lowAlpha);
+     }
+
+  // Uppercase message
+    var passUpper = confirm(`Should your password include upper case letters?`);
+
+   if (passUpper) {
+      masterChar = masterChar.concat(upAlpha)
+      }
+
+
+
+
       
 // Write password to the #password input
 function writePassword() {
