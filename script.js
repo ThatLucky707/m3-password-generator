@@ -8,7 +8,17 @@ var upAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 var numberSet =["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
+// Password generation message
+function generatePassword() {
 
+  var passwordText = document.querySelector("#password");
+  var passwordLength = prompt(`Enter a password length between 8 and 128 Characters`);
+  if (isNaN(passwordLength)) 
+  { alert('Please enter valid number(between 8 and 128)');
+    generatePassword();
+  
+  }
+      
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
