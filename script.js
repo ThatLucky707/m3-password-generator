@@ -41,8 +41,33 @@ if ((passwordLength < 8) || (passwordLength > 128)) {
       masterChar = masterChar.concat(upAlpha)
       }
 
+    // Number message
+    var passNumber = confirm(`Should your password include numbers?`);
 
+   if (passNumber) {
+      masterChar = masterChar.concat(numberSet);
+      }
 
+    // Symbols message
+    var passSpecial = confirm(`Should your password include special characters?`);
+
+   if (passSpecial) {
+      masterChar = masterChar.concat(specialChar);
+      }
+
+      if ((passLower == false) && (passUpper == false) && (passNumber == false) && (passSpecial == false)) {
+        return alert(`You must insert at least one type of character`);
+
+      }
+
+      // Generate password using chosen characters
+      var Password = "";
+      for (var i = 0; i < passwordLength; i++) {
+        var gen = Math.floor(Math.random() * masterChar.length);
+        Password = Password.concat(masterChar[gen]);
+      }
+      return Password;
+}
 
       
 // Write password to the #password input
@@ -54,5 +79,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// Adds button
 generateBtn.addEventListener("click", writePassword);
